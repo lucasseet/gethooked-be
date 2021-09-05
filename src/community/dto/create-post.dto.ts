@@ -1,4 +1,10 @@
-import {  IsNotEmpty, Length } from 'class-validator';
+import {  IsNotEmpty, IsEnum, Length } from 'class-validator';
+
+enum FishSpieces {
+  fish1,
+  fish2,
+  fish3,
+}
 
 export class CreatePostDto {
   @IsNotEmpty({message: 'Image is required'})
@@ -8,10 +14,14 @@ export class CreatePostDto {
   location: string;
 
   @IsNotEmpty()
+  @IsEnum(FishSpieces)
   species: string;
 
   @IsNotEmpty()
   @Length(8, 255)
   description: string;
+  
+  @IsNotEmpty()
+  fishingSpotId: number
 
 }

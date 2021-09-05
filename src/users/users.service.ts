@@ -4,6 +4,7 @@ import { Users } from './users.entity';
 
 @Injectable()
 export class UsersService {
+  
   async doUserRegistration(
     userRegister: UserRegisterRequestDto,
   ): Promise<Users> {
@@ -14,4 +15,10 @@ export class UsersService {
 
     return await users.save();
   }
+
+  async findOne(condition: any): Promise<Users> {
+    return Users.findOne(condition)
+  }
+
+
 }

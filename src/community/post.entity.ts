@@ -1,4 +1,5 @@
-import { BaseEntity, Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn } from "typeorm";
+import { FishingSpot } from "src/fishingspot/fishingspot.entity";
+import { BaseEntity, Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, ManyToOne } from "typeorm";
 
 @Entity('community')
 export class Posts extends BaseEntity{
@@ -22,5 +23,9 @@ export class Posts extends BaseEntity{
   
     @UpdateDateColumn()
     updatedAt: Date;
+
+    @ManyToOne(()  => FishingSpot, (fishingspot) => fishingspot.posts)
+    fishingspot: FishingSpot[];
+
 
 }

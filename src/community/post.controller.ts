@@ -1,6 +1,8 @@
-import { Body, Controller, Get, HttpCode, Module, Post, UsePipes, ValidationPipe } from "@nestjs/common";
+import { Body, Controller, Get, HttpCode, Param, ParseIntPipe, Post, UsePipes, ValidationPipe } from "@nestjs/common";
 import { CreatePostDto } from "./dto/create-post.dto";
 import { PostService } from "./post.service";
+import { Posts } from './post.entity';
+
 
 @Controller('community')
 
@@ -11,6 +13,11 @@ export class PostController {
     @Get('/')
     getAllPost(){
         return this.postService.getAllPost()
+    }
+
+    @Get('/:id')
+    async getPostById(@Param('id', ParseIntPipe) id: number): Promise<Posts> {
+      return await this.postService.getPostById(id);
     }
 
     @Post('/create')

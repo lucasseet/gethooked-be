@@ -20,8 +20,8 @@ export class CreatePostDto {
   @IsNotEmpty()
   @Length(8, 255)
   description: string;
-  
+
   @IsNotEmpty()
-  fishingSpotId: number
+  fishingspotId: number
 
 }

@@ -2,13 +2,14 @@ import { Body, Controller, Get, HttpCode, Param, ParseIntPipe, Post, UsePipes, V
 import { CreatePostDto } from "./dto/create-post.dto";
 import { PostService } from "./post.service";
 import { Posts } from './post.entity';
+import {FishingSpotService} from '../fishingspot/fishingspot.service'
 
 
 @Controller('community')
 
 export class PostController {
 
-    constructor(private postService: PostService ){}
+    constructor(private postService: PostService, private fishingspotService: FishingSpotService ){}
 
     @Get('/')
     getAllPost(){
@@ -23,8 +24,9 @@ export class PostController {
     @Post('/create')
     @HttpCode(200)
     @UsePipes(ValidationPipe)
-    async createPost(@Body() postData: CreatePostDto) {
-        return await this.postService.createNewPost(postData)
+    async createPost(@Body() postData: CreatePostDto): Promise<Posts> {
+        const fishingspot = await this.fishingspotService.getFishingSpotById(postData.fishingspotId)
+        return await this.postService.createNewPost(postData, fishingspot)
 
     }
 }

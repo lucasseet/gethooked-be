@@ -21,6 +21,12 @@ import { CreateFishingspotDto } from "./dto/create-fishingspot.dto";
     constructor(private readonly fishingspotService: FishingSpotService) {}
 
 
+    @Get('/fishing-spots/')
+    async getAllFishingSpot(): Promise<FishingSpot[]> {
+    return await this.fishingspotService.getAllFishingSpot();
+  }
+    
+    
     @Get('/fishing-spots/:id')
     async getFishingSpotById(@Param('id', ParseIntPipe) id: number): Promise<FishingSpot> {
       return await this.fishingspotService.getFishingSpotById(id);

@@ -1,4 +1,4 @@
-import { Body, Controller, Get, HttpCode, Param, ParseIntPipe, Post, UsePipes, ValidationPipe } from "@nestjs/common";
+import { Body, Delete, Controller, Get, HttpCode, Param, ParseIntPipe, Post, UsePipes, ValidationPipe } from "@nestjs/common";
 import { CreatePostDto } from "./dto/create-post.dto";
 import { PostService } from "./post.service";
 import { Posts } from './post.entity';
@@ -20,6 +20,7 @@ export class PostController {
     async getPostById(@Param('id', ParseIntPipe) id: number): Promise<Posts> {
       return await this.postService.getPostById(id);
     }
+    
 
     @Post('/create')
     @HttpCode(200)
@@ -29,4 +30,10 @@ export class PostController {
         return await this.postService.createNewPost(postData, fishingspot)
 
     }
+
+    @Delete(':id')
+    remove(@Param('id') id: string) {
+    this.postService.remove(+id);
+    return 'remove post successfully!'
+  }
 }

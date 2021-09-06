@@ -9,6 +9,9 @@ export class FishingSpot extends BaseEntity{
   
     @Column()
     location: string;
+
+    @Column()
+    description: string;
   
 
     @OneToMany(() => Posts, (posts) => posts.fishingspot)

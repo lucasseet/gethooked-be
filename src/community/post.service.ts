@@ -12,9 +12,10 @@ export class PostService {
     
     ){}
         
-    getAllPost() {
-        return [1,2,3, 'test']
-    }
+    async getAllPost(): Promise<Posts[]> {
+        return await this.postRepository.find()
+
+      }
 
     async getPostById(id: number): Promise<Posts> {
         return await this.postRepository.findOne(id);
@@ -37,5 +38,10 @@ export class PostService {
 
         return newPost;
     }
+
+    async remove(id: number): Promise<Posts> {
+        const post = await this.postRepository.findOne(id);
+        return this.postRepository.remove(post)
+      }
 
 }

@@ -11,6 +11,13 @@ export class FishingSpotService {
     private fishingspotRepository: FishingSpotRepository,
   ) {}
 
+  async getAllFishingSpot(): Promise<FishingSpot[]> {
+    return await this.fishingspotRepository
+      .createQueryBuilder('f')
+      .leftJoinAndSelect('f.posts', 'posts')
+      .getMany();
+  }
+
   async getFishingSpotById(id: number): Promise<FishingSpot> {
     return await this.fishingspotRepository.findOne(id, {
       relations: ['posts'],

@@ -1,9 +1,15 @@
-import {  IsNotEmpty, IsEnum, Length } from 'class-validator';
+import { IsNotEmpty, IsEnum, Length } from 'class-validator';
 
 enum FishSpieces {
-  fish1,
-  fish2,
-  fish3,
+  channelCatfish,
+  whiteBass,
+  rockBass,
+  smallmouthBass,
+  commonCarp,
+  northernPike,
+  longearSunfish,
+  whiteCrappie,
+  buffalo
 }
 
 export class CreatePostDto {

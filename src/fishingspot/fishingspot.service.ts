@@ -19,9 +19,22 @@ export class FishingSpotService {
   }
 
   async getFishingSpotById(id: number): Promise<FishingSpot> {
-    return await this.fishingspotRepository.findOne(id, {
+    const fishingSpot = await this.fishingspotRepository.findOne(id, {
       relations: ['posts'],
     });
+    const countData = await this.fishingspotRepository.query(
+      `SELECT species, count(species) as "count"
+      FROM gethooked.community
+      WHERE location = "Lower pierce reservoir"
+      GROUP BY (species)
+      ORDER BY (species)`,
+      
+    )
+    console.log({countData})
+
+    fishingSpot.fishCount = countData
+    
+    return fishingSpot
   }
 
   async createFishingSpot(fishingspot: CreateFishingspotDto) {

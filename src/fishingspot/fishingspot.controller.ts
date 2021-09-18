@@ -29,6 +29,7 @@ import { CreateFishingspotDto } from "./dto/create-fishingspot.dto";
     
     @Get('/fishing-spots/:id')
     async getFishingSpotById(@Param('id', ParseIntPipe) id: number): Promise<FishingSpot> {
+      console.log("hello")
       return await this.fishingspotService.getFishingSpotById(id);
     }
 

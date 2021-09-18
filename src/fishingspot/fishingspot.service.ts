@@ -3,6 +3,8 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { FishingSpot } from './fishingspot.entity';
 import { FishingSpotRepository } from './fishingspot.repository';
 import { CreateFishingspotDto } from './dto/create-fishingspot.dto';
+import {paginate, Pagination, IPaginationOptions} from 'nestjs-typeorm-paginate';
+
 
 @Injectable()
 export class FishingSpotService {
@@ -16,6 +18,11 @@ export class FishingSpotService {
       .createQueryBuilder('f')
       .leftJoinAndSelect('f.posts', 'posts')
       .getMany();
+  }
+
+  // Need to paginate with the top
+  async paginate(options: IPaginationOptions): Promise<Pagination<FishingSpot>> {
+    return paginate<FishingSpot>(this.fishingspotRepository, options);
   }
 
   async getFishingSpotById(id: number): Promise<FishingSpot> {

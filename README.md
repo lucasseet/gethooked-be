@@ -2,72 +2,83 @@
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
 </p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+<h1>GetHooked</h1>
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+OBJECTIVE: <a href="http://gethooked-fe.herokuapp.com/">GetHooked</a> is an App that allows angler to record catches, share with people with similar hobby — which is tag to the specific Fishing hotspots. GetHooked allows angler to upload their fresh catch images to the community platform to "Brag their catches". It also empowers angler with the knowledge to figure out where are the hot bites and the most caught fishes in that specific fishing spot.
 
-## Description
+WHO WILL USE THIS: Angler, People with fishing as a hobby, fishing community.
+<br />
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+#
 
-## Installation
+<h2> Application Features </h2>
+1. Login page<br>
+2. Register Page<br>
+3. Homepage — introduction<br>
+4. Nearby Waters page<br>
+5. Community post <br>
 
-```bash
-$ npm install
-```
+<br/>
+<h2>Technologies used</h2>
+- Authorization<br>
+- Typeorm SQL<br>
+- NestJS typescript<br>
+- Bcrypt<br>
+- Toastify<br>
+- Material UI<br>
+- AXIOS<br>
+- CORS<br>
+- DOTENV<br>
+- React<br>
+- JSON Web Token<br>
+<br/>
 
-## Running the app
+<h2>Routes / Pages</h2>
+<h3>Front End:</h3>
+<img src="public/routes-fe.png" width="1000">
+<br><br>
+<h3>Back End:</h3>
+<img src="public/routes-be.png" width="1000">
+<br>
+<br/>
+<h2>The Approaches Taken</h2>
+1. Research on best practices & competitor analysis<br>
+2. Research on design inspirations <br>
+3. App Name Exploration <br>
+4. Wireframe / Design mock up & logo design<br>
+5. Determine the routes and data needed<br>
+6. Set up database with Typeorm SQL<br>
+7. Concurrently working on Front User Interface & Back End  Routes <br>
+8. Deploying Backend on Heroku and Postman<br>
+9. Deploying Front End onto Heroku<br>
+<br>
+<br>
 
-```bash
-# development
-$ npm run start
+<h2>Initial Wireframe & Design</h2>
+<img src="public/gethooked-documentation-1.png" width="1000">
+<img src="public/gethooked-documentation-2.png" width="1000">
+<img src="public/gethooked-documentation-3.png" width="1000">
+<br><br>
+<h2>Unsolved Problems</h2>
+1. Fishing Spot Page (Google Map)<br>
+2. Nearby Water page: Fishing spot specs<br>
+3. Nearby Water page: Ratings<br>
+4. Community Post: Upload image to cloudinary<br>
+<br>
 
-# watch mode
-$ npm run start:dev
+<h2>Note to self</h2>
+1. Further improve on app features e.g. Google Map, upload image to cloudinary <br>
 
-# production mode
-$ npm run start:prod
-```
 
-## Test
+<br>
 
-```bash
-# unit tests
-$ npm run test
+<h2>Application Front / Back End Deployed on Heroku</h2>
+1. <a href ="https://teamup-fe.herokuapp.com/">GetHooked Font End
+ </a><br>
+<br>
 
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+<h2>Github Repositories</h2>
+1. <a href ="https://github.com/lucasseet/gethooked-fe">Front-End Repo
+ </a><br>
+2. <a href ="https://github.com/lucasseet/gethooked-be">Back-End Repo
+ </a><br>

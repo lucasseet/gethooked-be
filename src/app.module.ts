@@ -8,6 +8,9 @@ import { typeOrmConfigAsync } from './config/typeorm.config';
 import { UsersModule } from './users/users.module';
 import { PostModule } from './community/post.module';
 import { FishingspotModule } from './fishingspot/fishingspot.module';
+import { CloudinaryModule } from './cloudinary/cloudinary.module';
+
+
 
 @Module({
   imports: [
@@ -15,7 +18,11 @@ import { FishingspotModule } from './fishingspot/fishingspot.module';
     TypeOrmModule.forRootAsync(typeOrmConfigAsync),
     UsersModule,
     PostModule,
-    FishingspotModule
+    FishingspotModule,
+    CloudinaryModule,
+    ConfigModule.forRoot({
+      envFilePath: '.env',
+    }),
   ],
   controllers: [AppController],
   providers: [AppService],

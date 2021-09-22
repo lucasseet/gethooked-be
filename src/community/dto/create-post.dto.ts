@@ -16,7 +16,7 @@ export class CreatePostDto {
   @IsNotEmpty({message: 'Image is required'})
   image: string;
 
-  @IsNotEmpty()
+  // @IsNotEmpty()
   location: string;
 
   @IsNotEmpty()

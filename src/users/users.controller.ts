@@ -49,7 +49,8 @@ export class UsersController {
     response.cookie('jwt', jwt, {httpOnly: true});
 
         return {
-            message: 'success'
+            message: 'success',
+            token: jwt
         };
   }
 
